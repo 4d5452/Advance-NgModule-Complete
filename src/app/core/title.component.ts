@@ -7,9 +7,9 @@ import { UserService } from './user.service';
   templateUrl: './title.component.html'
 })
 export class TitleComponent {
-  @Input() 
-    subtitle = '';
+  @Input() subtitle = '';
   title = 'Angular Modules';
+  titleHighlightColor = 'blue';
   user = '';
 
   constructor(userService: UserService){

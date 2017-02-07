@@ -14,6 +14,7 @@ var TitleComponent = (function () {
     function TitleComponent(userService) {
         this.subtitle = '';
         this.title = 'Angular Modules';
+        this.titleHighlightColor = 'blue';
         this.user = '';
         this.user = userService.userName;
     }

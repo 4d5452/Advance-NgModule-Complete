@@ -11,11 +11,40 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var core_1 = require('@angular/core');
 var HighlightDirective = (function () {
     function HighlightDirective(el) {
-        el.nativeElement.style.backgroundColor = 'gold';
-        console.log("* Shared highlight called for " + el.nativeElement.tagName);
+        this.el = el;
     }
+    HighlightDirective.prototype.onmouseenter = function () {
+        this.highlight(this.highlightColor || this.defaultColor || 'gold');
+    };
+    HighlightDirective.prototype.onmouseleave = function () {
+        this.highlight(null);
+    };
+    HighlightDirective.prototype.highlight = function (color) {
+        this.el.nativeElement.style.backgroundColor = color;
+        console.log("* Shared highlight called for " + this.el.nativeElement.tagName);
+    };
+    __decorate([
+        core_1.Input('highlight'), 
+        __metadata('design:type', String)
+    ], HighlightDirective.prototype, "highlightColor", void 0);
+    __decorate([
+        core_1.Input(), 
+        __metadata('design:type', String)
+    ], HighlightDirective.prototype, "defaultColor", void 0);
+    __decorate([
+        core_1.HostListener('mouseenter'), 
+        __metadata('design:type', Function), 
+        __metadata('design:paramtypes', []), 
+        __metadata('design:returntype', void 0)
+    ], HighlightDirective.prototype, "onmouseenter", null);
+    __decorate([
+        core_1.HostListener('mouseleave'), 
+        __metadata('design:type', Function), 
+        __metadata('design:paramtypes', []), 
+        __metadata('design:returntype', void 0)
+    ], HighlightDirective.prototype, "onmouseleave", null);
     HighlightDirective = __decorate([
-        core_1.Directive({ selector: '[highlight], input' }), 
+        core_1.Directive({ selector: '[highlight]' }), 
         __metadata('design:paramtypes', [core_1.ElementRef])
     ], HighlightDirective);
     return HighlightDirective;

@@ -1,10 +1,27 @@
-import { Directive, ElementRef, Input } from '@angular/core';
+import { Directive, ElementRef, HostListener, Input } from '@angular/core';
 
-@Directive({ selector: '[highlight], input' })
+@Directive({ selector: '[highlight]' })
 export class HighlightDirective {
+  @Input('highlight') highlightColor: string;
+  @Input() defaultColor: string;
+  el: ElementRef;
+
   constructor(el: ElementRef) {
-    el.nativeElement.style.backgroundColor = 'gold';
-    console.log(
-      `* Shared highlight called for ${el.nativeElement.tagName}`);
+    this.el = el;
   }
+
+  @HostListener('mouseenter') onmouseenter() {
+    this.highlight(this.highlightColor || this.defaultColor || 'gold');
+  }
+
+  @HostListener('mouseleave') onmouseleave() {
+    this.highlight(null);
+  }
+
+  private highlight(color: string) {
+    this.el.nativeElement.style.backgroundColor = color;
+    console.log(
+      `* Shared highlight called for ${this.el.nativeElement.tagName}`);
+  }
+
 }
