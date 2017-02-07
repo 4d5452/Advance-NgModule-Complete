@@ -5,9 +5,7 @@ import { TitleComponent } from './title.component';
 import { UserService, UserServiceConfig } from './user.service';
 
 @NgModule({
-  imports: [ 
-    SharedModule
- ],
+  imports: [ SharedModule ],
   declarations: [ TitleComponent ],
   exports: [ TitleComponent ],
   providers: [ UserService ]

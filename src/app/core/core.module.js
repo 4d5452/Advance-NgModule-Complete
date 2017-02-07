@@ -31,9 +31,7 @@ var CoreModule = (function () {
     };
     CoreModule = __decorate([
         core_1.NgModule({
-            imports: [
-                shared_module_1.SharedModule
-            ],
+            imports: [shared_module_1.SharedModule],
             declarations: [title_component_1.TitleComponent],
             exports: [title_component_1.TitleComponent],
             providers: [user_service_1.UserService]
