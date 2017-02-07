@@ -12,7 +12,7 @@ var __param = (this && this.__param) || function (paramIndex, decorator) {
     return function (target, key) { decorator(target, key, paramIndex); }
 };
 var core_1 = require('@angular/core');
-var common_1 = require('@angular/common');
+var shared_module_1 = require('../shared/shared.module');
 var title_component_1 = require('./title.component');
 var user_service_1 = require('./user.service');
 var CoreModule = (function () {
@@ -31,7 +31,9 @@ var CoreModule = (function () {
     };
     CoreModule = __decorate([
         core_1.NgModule({
-            imports: [common_1.CommonModule],
+            imports: [
+                shared_module_1.SharedModule
+            ],
             declarations: [title_component_1.TitleComponent],
             exports: [title_component_1.TitleComponent],
             providers: [user_service_1.UserService]

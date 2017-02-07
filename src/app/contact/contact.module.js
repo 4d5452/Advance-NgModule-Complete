@@ -8,13 +8,10 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-/** Modules: imports */
 var core_1 = require('@angular/core');
 var shared_module_1 = require('../shared/shared.module');
 var contact_routing_module_1 = require('./contact-routing.module');
-/** Components: declaration */
 var contact_component_1 = require('./contact.component');
-/** Services: providers */
 var contact_service_1 = require('./contact.service');
 var ContactModule = (function () {
     function ContactModule() {

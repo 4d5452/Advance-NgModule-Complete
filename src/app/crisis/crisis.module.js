@@ -8,14 +8,11 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-/** Modules: imports */
 var core_1 = require('@angular/core');
-var common_1 = require('@angular/common');
+var shared_module_1 = require('../shared/shared.module');
 var crisis_routing_module_1 = require('./crisis-routing.module');
-/** Components: declarations */
 var crisis_detail_component_1 = require('./crisis-detail.component');
 var crisis_list_component_1 = require('./crisis-list.component');
-/** Services: providers */
 var crisis_service_1 = require('./crisis.service');
 var CrisisModule = (function () {
     function CrisisModule() {
@@ -23,7 +20,7 @@ var CrisisModule = (function () {
     CrisisModule = __decorate([
         core_1.NgModule({
             imports: [
-                common_1.CommonModule,
+                shared_module_1.SharedModule,
                 crisis_routing_module_1.CrisisRoutingModule
             ],
             exports: [],

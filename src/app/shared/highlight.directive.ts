@@ -1,10 +1,10 @@
-import { Directive, ElementRef } from '@angular/core';
+import { Directive, ElementRef, Input } from '@angular/core';
+
 @Directive({ selector: '[highlight], input' })
-/** Highlight the attached element or an InputElement in blue */
 export class HighlightDirective {
   constructor(el: ElementRef) {
-    el.nativeElement.style.backgroundColor = 'powderblue';
+    el.nativeElement.style.backgroundColor = 'gold';
     console.log(
-      `* Contact highlight called for ${el.nativeElement.tagName}`);
+      `* Shared highlight called for ${el.nativeElement.tagName}`);
   }
 }

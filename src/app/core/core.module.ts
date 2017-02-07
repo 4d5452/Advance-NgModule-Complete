@@ -1,11 +1,13 @@
 import { ModuleWithProviders, NgModule, Optional, SkipSelf } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { SharedModule } from '../shared/shared.module';
 
 import { TitleComponent } from './title.component';
 import { UserService, UserServiceConfig } from './user.service';
 
 @NgModule({
-  imports: [ CommonModule ],
+  imports: [ 
+    SharedModule
+ ],
   declarations: [ TitleComponent ],
   exports: [ TitleComponent ],
   providers: [ UserService ]

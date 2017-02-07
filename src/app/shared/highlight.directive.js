@@ -11,8 +11,8 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var core_1 = require('@angular/core');
 var HighlightDirective = (function () {
     function HighlightDirective(el) {
-        el.nativeElement.style.backgroundColor = 'powderblue';
-        console.log("* Contact highlight called for " + el.nativeElement.tagName);
+        el.nativeElement.style.backgroundColor = 'gold';
+        console.log("* Shared highlight called for " + el.nativeElement.tagName);
     }
     HighlightDirective = __decorate([
         core_1.Directive({ selector: '[highlight], input' }), 
